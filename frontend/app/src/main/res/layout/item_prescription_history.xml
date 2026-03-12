@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_rounded_white"
+    android:elevation="0dp"
+    android:padding="16dp"
+    app:strokeColor="#EAEAEA"
+    app:strokeWidth="1dp">
+
+    <!-- Avatar -->
+    <ImageView
+        android:id="@+id/ivPatientAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle_cyan_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAvatarInitials"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="SJ"
+        android:textColor="#00897B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPatientAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivPatientAvatar"
+        app:layout_constraintStart_toStartOf="@+id/ivPatientAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivPatientAvatar" />
+
+    <!-- Details -->
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Sarah Jenkins"
+        android:textColor="@color/colorSecondary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatusBadge"
+        app:layout_constraintStart_toEndOf="@+id/ivPatientAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivPatientAvatar" />
+
+    <!-- Status Badge -->
+    <TextView
+        android:id="@+id/tvStatusBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_badge_light_orange"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Pending"
+        android:textColor="#E65100"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPatientName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPatientName"/>
+
+    <!-- Contact line -->
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="OPD #8921 • +1 (555) 012-3456"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPatientName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientName" />
+
+    <!-- Diagnosis -->
+    <TextView
+        android:id="@+id/tvDiagnosisLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Diagnosis:"
+        android:textColor="@color/colorSecondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPatientName"
+        app:layout_constraintTop_toBottomOf="@+id/tvContact" />
+
+    <TextView
+        android:id="@+id/tvDiagnosis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="ANUG, Gingivitis"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDiagnosisLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDiagnosisLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvDiagnosisLabel" />
+
+    <!-- Drugs Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDrugsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_circle_grey"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPatientName"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiagnosisLabel">
+
+        <ImageView
+            android:id="@+id/ivDrugIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@android:drawable/ic_menu_today"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorOutline" />
+
+        <TextView
+            android:id="@+id/tvDrugsList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Amoxicillin, Metronidazole"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintStart_toEndOf="@+id/ivDrugIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:42 AM"
+            android:textColor="@color/colorOutline"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

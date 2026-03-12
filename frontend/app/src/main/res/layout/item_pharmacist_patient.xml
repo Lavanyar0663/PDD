@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_rounded_white"
+    android:elevation="0dp"
+    android:padding="16dp"
+    app:strokeColor="#EAEAEA"
+    app:strokeWidth="1dp">
+
+    <!-- Top Row: Avatar & Basic Info -->
+    <ImageView
+        android:id="@+id/ivPatientAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle_cyan_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAvatarInitials"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="SJ"
+        android:textColor="#00897B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPatientAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivPatientAvatar"
+        app:layout_constraintStart_toStartOf="@+id/ivPatientAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivPatientAvatar" />
+
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Sarah Jenkins"
+        android:textColor="@color/colorSecondary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvOpdId"
+        app:layout_constraintEnd_toStartOf="@+id/tvLastVisit"
+        app:layout_constraintStart_toEndOf="@+id/ivPatientAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivPatientAvatar"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvOpdId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#F0F2F5"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="2dp"
+        android:text="OPD #8921"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPatientAvatar"
+        app:layout_constraintStart_toStartOf="@+id/tvPatientName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientName" />
+
+    <TextView
+        android:id="@+id/tvAgeGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="34y / F"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOpdId"
+        app:layout_constraintStart_toEndOf="@+id/tvOpdId"
+        app:layout_constraintTop_toTopOf="@+id/tvOpdId" />
+
+    <!-- Last Visit -->
+    <TextView
+        android:id="@+id/tvLastVisitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LAST VISIT"
+        android:textColor="@color/colorOutline"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivPatientAvatar" />
+
+    <TextView
+        android:id="@+id/tvLastVisit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:textColor="@color/colorSecondary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastVisitLabel" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#F0F2F5"
+        app:layout_constraintTop_toBottomOf="@+id/ivPatientAvatar" />
+
+    <!-- Bottom Row: Contact -->
+    <ImageView
+        android:id="@+id/ivPhoneIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@android:drawable/stat_sys_phone_call"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDivider"
+        app:tint="@color/colorOutline" />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="+1 (555) 012-3456"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhoneIcon"
+        app:layout_constraintStart_toEndOf="@+id/ivPhoneIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivPhoneIcon" />
+
+    <!-- Action Arrow -->
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="?android:attr/actionModeWebSearchDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhoneIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivPhoneIcon"
+        app:tint="#009688" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

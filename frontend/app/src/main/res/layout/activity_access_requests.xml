@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".AccessRequestsActivity">
+
+    <!-- Header -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_media_previous"
+        app:tint="@color/colorSecondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:text="Access Requests"
+        android:textColor="@color/colorSecondary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack"
+        app:layout_constraintBottom_toTopOf="@+id/tvHeaderSubtitle"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/tvHeaderSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Manage pending approvals"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvHeaderTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack" />
+
+    <!-- Avatar mock -->
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_logo"
+        android:background="@drawable/bg_glow"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeaderSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHeaderTitle" />
+
+    <!-- Toggle Tabs (Pending, Approved, Rejected) -->
+    <LinearLayout
+        android:id="@+id/llTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_card_rounded_white"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderSubtitle">
+
+        <!-- Pending Tab (Active) -->
+        <LinearLayout
+            android:id="@+id/tabPending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_badge_white_shadow"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pending"
+                android:textColor="@color/colorSecondary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_badge_teal"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="8"
+                android:textColor="#00897B"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Approved Tab (Inactive) -->
+        <TextView
+            android:id="@+id/tabApproved"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Approved"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="14sp" />
+
+        <!-- Rejected Tab (Inactive) -->
+        <TextView
+            android:id="@+id/tabRejected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Rejected"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRequests"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        android:paddingHorizontal="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTabs"
+        tools:listitem="@layout/item_access_request" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

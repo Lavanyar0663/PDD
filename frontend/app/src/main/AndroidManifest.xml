@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Frontend">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".RequestAccessActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ManageDoctorsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ManagePharmacistsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ManagePatientsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".AccessRequestsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".RequestProfileActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".RequestApprovedActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".DoctorMainActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".DoctorSettingsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".PrescriptionHistoryActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".CreatePrescriptionActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".PrescriptionIssuedActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".PharmacistMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OtpActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordUpdatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffRegistrationCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewPatientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestRejectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProfileActivity"
+            android:exported="false" />
+            
+    </application>
+
+</manifest>
